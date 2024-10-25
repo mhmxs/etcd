@@ -466,6 +466,8 @@ message RangeRequest {
   // max_create_revision is the upper bound for returned key create revisions; all keys with
   // greater create revisions will be filtered away.
   int64 max_create_revision = 13;
+
+  string labelSelector = 14;
 }
 
 message RangeResponse {
@@ -731,6 +733,8 @@ message WatchCreateRequest {
 
   // fragment enables splitting large revisions into multiple watch responses.
   bool fragment = 8;
+
+  string labelSelector = 9;
 }
 
 message WatchCancelRequest {

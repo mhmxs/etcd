@@ -80,6 +80,8 @@ type Op struct {
 
 	isOptsWithFromKey bool
 	isOptsWithPrefix  bool
+
+	labelSelector string
 }
 
 // accessors / mutators
@@ -161,6 +163,7 @@ func (op Op) toRangeRequest() *pb.RangeRequest {
 		MaxModRevision:    op.maxModRev,
 		MinCreateRevision: op.minCreateRev,
 		MaxCreateRevision: op.maxCreateRev,
+		LabelSelector:     op.labelSelector,
 	}
 	if op.sort != nil {
 		r.SortOrder = pb.RangeRequest_SortOrder(op.sort.Order)
@@ -361,6 +364,10 @@ func WithSort(target SortTarget, order SortOrder) OpOption {
 		}
 		op.sort = &SortOption{target, order}
 	}
+}
+
+func WithLabelSelector(ls string) OpOption {
+	return func(op *Op) { op.labelSelector = ls }
 }
 
 // GetPrefixRangeEnd gets the range end of the prefix.
