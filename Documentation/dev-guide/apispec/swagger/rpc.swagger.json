@@ -2571,6 +2571,9 @@
           "description": "count_only when set returns only the count of the keys in the range.",
           "type": "boolean"
         },
+        "fieldSelector": {
+          "type": "string"
+        },
         "key": {
           "description": "key is the first key for the range. If range_end is not given, the request only looks up key.",
           "type": "string",

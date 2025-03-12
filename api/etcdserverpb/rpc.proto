@@ -468,6 +468,8 @@ message RangeRequest {
   int64 max_create_revision = 13;
 
   string labelSelector = 14;
+
+  string fieldSelector = 15;
 }
 
 message RangeResponse {
