@@ -737,6 +737,8 @@ message WatchCreateRequest {
   bool fragment = 8;
 
   string labelSelector = 9;
+
+  string fieldSelector = 10;
 }
 
 message WatchCancelRequest {

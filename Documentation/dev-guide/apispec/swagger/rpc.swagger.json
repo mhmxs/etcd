@@ -2855,6 +2855,9 @@
     "etcdserverpbWatchCreateRequest": {
       "type": "object",
       "properties": {
+        "fieldSelector": {
+          "type": "string"
+        },
         "filters": {
           "description": "filters filter the events at server side before it sends back to the watcher.",
           "type": "array",
