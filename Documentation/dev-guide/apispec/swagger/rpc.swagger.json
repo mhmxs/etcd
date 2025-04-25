@@ -2665,6 +2665,12 @@
           "type": "string",
           "format": "int64",
           "description": "max_create_revision is the upper bound for returned key create revisions; all keys with\ngreater create revisions will be filtered away."
+        },
+        "labelSelector": {
+          "type": "string"
+        },
+        "fieldSelector": {
+          "type": "string"
         }
       }
     },
@@ -2944,6 +2950,12 @@
         "fragment": {
           "type": "boolean",
           "description": "fragment enables splitting large revisions into multiple watch responses."
+        },
+        "labelSelector": {
+          "type": "string"
+        },
+        "fieldSelector": {
+          "type": "string"
         }
       }
     },

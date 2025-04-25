@@ -218,6 +218,8 @@ type watchRequest struct {
 	prevKV bool
 	// retc receives a chan WatchResponse once the watcher is established
 	retc chan chan WatchResponse
+
+	labelSelector string
 }
 
 // progressRequest is issued by the subscriber to request watch progress
@@ -316,6 +318,7 @@ func (w *watcher) Watch(ctx context.Context, key string, opts ...OpOption) Watch
 		filters:        filters,
 		prevKV:         ow.prevKV,
 		retc:           make(chan chan WatchResponse, 1),
+		labelSelector:  ow.labelSelector,
 	}
 
 	ok := false
